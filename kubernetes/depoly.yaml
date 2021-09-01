@@ -26,10 +26,14 @@ spec:
            httpGet:
              path: /healthz
              port: 3111
+           initialDelaySeconds: 300
+           periodSeconds: 30
         readinessProbe:
            httpGet:
              path: /healthz
              port: 3111
+           initialDelaySeconds: 300
+           periodSeconds: 30
         resources:
           requests:
             memory: "64Mi"
