@@ -70,7 +70,7 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
-
+        app.logger.info("%s article is created", title)
         if not title:
             flash('Title is required!')
         else:
@@ -83,7 +83,7 @@ def create():
             return redirect(url_for('index'))
        
     return render_template('create.html')
-    app.logger.info("%s article is created", title) 
+     
 # Define the healthcheck
 @app.route('/healthz')
 def healthcheck():
